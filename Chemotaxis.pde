@@ -1,5 +1,5 @@
 ArrayList<Bacteria> bacteria;
-int initialNumBacteria = 50;
+int initialNumBacteria = (int)(Math.random()*50+40);
 int x,y;
 
 void setup() {
@@ -36,7 +36,27 @@ void draw() {
 
   fill(0);
   text("Colony: " + bacteria.size(), 10, 750);
-  text("Time: " + (int)(frameCount/frameRate), 10, 770);
+  text("Time: " + (frameCount/frameRate) + " sec", 10, 770);
+}
+
+void keyPressed() {
+
+	switch (key) {
+		case ' ':
+			for(int i = bacteria.size()-1; i >= 0; i-=2) {
+				bacteria.remove(i);
+			}
+			break;
+	}
+}
+
+void mousePressed() {
+	int spawn = (int)(Math.random()*50+50);
+	for (int i = 1; i <= spawn; i++) {
+    	x = (int)(Math.random()*400+200);
+    	y = (int)(Math.random()*400+200);
+    	bacteria.add(new Bacteria(x,y));
+ 	}
 }
 
 class Bacteria {
