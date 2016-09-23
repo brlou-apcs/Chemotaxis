@@ -37,7 +37,7 @@ void draw() {
   fill(0);
   textSize(15);
   text("Colony: " + bacteria.size(), 10, 750);
-  text("Time: " + (frameCount/frameRate) + " sec", 10, 770);
+  text("Time: " + (float)(frameCount/frameRate) + " sec", 10, 770);
   text("SPACE to kill off population", 550, 25);
   text("CLICK to introduce new bacteria", 550, 50);
 }
