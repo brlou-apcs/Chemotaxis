@@ -3,7 +3,7 @@ int initialNumBacteria = (int)(Math.random()*50+40);
 int x,y;
 
 void setup() {
-	frameRate(20);
+	frameRate(15);
 	size(800,800);
   background(72,168,216);
 
@@ -35,8 +35,11 @@ void draw() {
   }
 
   fill(0);
+  textSize(15);
   text("Colony: " + bacteria.size(), 10, 750);
   text("Time: " + (frameCount/frameRate) + " sec", 10, 770);
+  text("SPACE to kill off population", 550, 25);
+  text("CLICK to introduce new bacteria", 550, 50);
 }
 
 void keyPressed() {
